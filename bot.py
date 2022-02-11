@@ -47,10 +47,13 @@ async def on_message(message):
     if message.content.startswith("$contest"):
         utils.store_problems()
         contests=utils.get_problems()
-
-        await message.channel.send("Contests are: ")
-        for idx in contests.index:
-            await message.channel.send(contests["Contest"][idx]+" "+contests["Link"][idx])
+        size=contests.shape
+        if size[0]==0 or size[1]==0 :
+            await message.channel.send("NO contests are going to be held for next 24 hours. Practice Hard until then!!")
+        else:
+            await message.channel.send("Contests are: ")
+            for idx in contests.index:
+                await message.channel.send(contests["Contest"][idx]+" "+contests["Link"][idx])
 
 
 client.run(TOKEN)

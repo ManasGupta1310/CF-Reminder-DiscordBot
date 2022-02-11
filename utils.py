@@ -26,7 +26,7 @@ def store_problems():
         start_time=(((contest["relativeTimeSeconds"]*(-1))//60)//60)
         link="https://codeforces.com/contest/"+str(id)
 
-        if start_time<100:
+        if start_time<24:
             print(str(id)+" "+str(name)+" "+str(start_time)+" hours")
             csv_writer.writerow([id,name,start_time,link])
     
