@@ -2,12 +2,15 @@ import os
 import discord
 import utils
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
-TOKEN=os.getenv('DISCORD_TOKEN')
-GUILD=os.getenv('DISCORD_SERVER')
+# TOKEN=os.getenv('DISCORD_TOKEN')
+# GUILD=os.getenv('DISCORD_SERVER')
+
+TOKEN=os.environ['DISCORD_TOKEN']
+GUILD=os.environ['DISCORD_SERVER']
 
 client=discord.Client()
 
