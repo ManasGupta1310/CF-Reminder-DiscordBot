@@ -2,7 +2,6 @@ import requests
 import json
 import csv
 import pandas as pd
-import numpy as np
 
 
 def store_problems():
