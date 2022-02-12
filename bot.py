@@ -2,6 +2,7 @@ from asyncio import tasks
 import os
 import discord
 import utils
+from discord.ext import commands, tasks
 import random
 
 
@@ -80,5 +81,5 @@ async def on_message(message):
 @tasks.loop(minutes=1)
 async def called_once():
     print("1 minute passed")
-    
+
 client.run(TOKEN)
