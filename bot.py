@@ -1,6 +1,5 @@
 from asyncio import tasks
 import os
-from unicodedata import name
 import discord
 import utils
 from discord.ext import commands, tasks
@@ -28,8 +27,8 @@ async def on_ready():
 
 @client.event
 async def on_member_join(member):
-    await member.channel.send(
-        f'Hi {member.name}, Welcome to GhostXtrm server! I am a bot for reminding about the Contests!'
+    await client.channel.send(
+        f'Hi {member.name}, Welcome to GhostXtrm server! I am a bot for reminding about the Contests and giving problems to solve!'
     )
 
 
@@ -78,6 +77,7 @@ async def on_message(message):
             rand=random.sample(range(0,size[0]),3)    
             for idx in rand:
                 await message.channel.send(problems["Name"][idx]+" "+problems["Link"][idx])
+
 
 @bot.command(name="hello")
 async def on_message(message):

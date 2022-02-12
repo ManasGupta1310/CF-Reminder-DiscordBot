@@ -60,11 +60,11 @@ def store_problems(x,y):
                 link="https://codeforces.com/problemset/problem/"+str(id)+"/"+str(idx)
 
 
-                print(str(id)+" "+str(name)+" "+str(idx))
+                # print(str(id)+" "+str(name)+" "+str(idx))
                 csv_writer.writerow([serial_no,id,idx,name, rating,link])
                 serial_no+=1
         
-
+    print("Problems loaded")
     csv_file.close()
 
 def get_problems():
