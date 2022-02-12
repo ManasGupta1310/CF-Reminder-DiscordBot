@@ -4,14 +4,9 @@ import discord
 import utils
 from discord.ext import commands, tasks
 import random
-from dotenv import load_dotenv
 
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
-GUILD = os.getenv('DISCORD_SERVER')
-
-# TOKEN=os.environ['DISCORD_TOKEN']
-# GUILD=os.environ['DISCORD_SERVER']
+TOKEN=os.environ['DISCORD_TOKEN']
+GUILD=os.environ['DISCORD_SERVER']
 
 intents = discord.Intents.all()
 client=discord.Client(intents=intents)
