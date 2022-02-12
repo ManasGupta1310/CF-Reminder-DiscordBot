@@ -1,5 +1,6 @@
 from asyncio import tasks
 import os
+from unicodedata import name
 import discord
 import utils
 from discord.ext import commands, tasks
@@ -11,7 +12,7 @@ GUILD=os.environ['DISCORD_SERVER']
 
 client=discord.Client()
 
-
+bot=commands.Bot(command_prefix="!")
 
 
 @client.event
@@ -78,8 +79,12 @@ async def on_message(message):
             for idx in rand:
                 await message.channel.send(problems["Name"][idx]+" "+problems["Link"][idx])
 
+@bot.command(name="hello")
+async def on_message(message):
+    await message.channel.send(f"Hi {message.author}")
+
 @tasks.loop(minutes=1)
-async def called_once():
+async def called_once_a_day():
     print("1 minute passed")
 
 client.run(TOKEN)
