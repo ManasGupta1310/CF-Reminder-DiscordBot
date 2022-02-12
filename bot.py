@@ -58,7 +58,7 @@ async def on_message(message):
         if len(arr)==1:
             x=4000
             y=0
-        elif len(arr=2):
+        elif len(arr)==2:
             x=arr[1]
             y=0
         else:
