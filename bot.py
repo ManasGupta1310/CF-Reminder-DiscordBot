@@ -65,7 +65,7 @@ async def on_message(message):
             x=arr[1]
             y=arr[2]
         
-        utils.store_problem(x,y)
+        utils.store_problems(x,y)
         problems=utils.get_problems()
         size=problems.shape
         if size[0]==0 or size[1]==0 :

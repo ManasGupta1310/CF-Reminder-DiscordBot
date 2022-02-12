@@ -35,7 +35,7 @@ def get_contest():
     data=pd.read_csv("CF-contest.csv")
     return data
     
-def get_problems(x,y):
+def store_problems(x,y):
     RATING_UP=x
     RATING_DOWN=y
     csv_file=open('CF-problem.csv','w',encoding='UTF-8')
@@ -67,7 +67,7 @@ def get_problems(x,y):
 
     csv_file.close()
 
-def get_contest():
+def get_problems():
     data=pd.read_csv("CF-problem.csv")
     return data
 
