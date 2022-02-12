@@ -4,12 +4,17 @@ import discord
 import utils
 from discord.ext import commands, tasks
 import random
+from dotenv import load_dotenv
 
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
+GUILD = os.getenv('DISCORD_SERVER')
 
-TOKEN=os.environ['DISCORD_TOKEN']
-GUILD=os.environ['DISCORD_SERVER']
+# TOKEN=os.environ['DISCORD_TOKEN']
+# GUILD=os.environ['DISCORD_SERVER']
 
-client=discord.Client()
+intents = discord.Intents.all()
+client=discord.Client(intents=intents)
 
 bot=commands.Bot(command_prefix="!")
 
@@ -28,17 +33,16 @@ async def on_ready():
 @client.event
 async def on_member_join(member):
     name="general"
-    id
-    for channel in client.get_all_channels:
+    id=0
+    for channel in client.get_all_channels():
         if channel.name==name:
             id=channel.id
-            print(channel.id)
-    print(id)
-    print(channel)
+
     channel=client.get_channel(id)
     await channel.send(
         f'Hi {member.name}, Welcome to GhostXtrm server! I am a bot for reminding about the Contests and giving problems to solve!'
     )
+    print("Sent Join Message")
 
 @client.event
 async def on_message(message):
