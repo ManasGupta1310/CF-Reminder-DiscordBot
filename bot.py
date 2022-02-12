@@ -1,3 +1,4 @@
+from asyncio import tasks
 import os
 import discord
 import utils
@@ -76,5 +77,8 @@ async def on_message(message):
             for idx in rand:
                 await message.channel.send(problems["Name"][idx]+" "+problems["Link"][idx])
 
-
+@tasks.loop(minutes=1)
+async def called_once():
+    print("1 minute passed")
+    
 client.run(TOKEN)
