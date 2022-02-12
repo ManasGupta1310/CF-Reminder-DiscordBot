@@ -27,7 +27,14 @@ async def on_ready():
 
 @client.event
 async def on_member_join(member):
-    await client.channel.send(
+    name="general"
+    id
+    for channel in client.get_all_channels:
+        if channel.name==name:
+            id=channel.id
+        
+    channel=client.get_channel(id)
+    await channel.send(
         f'Hi {member.name}, Welcome to GhostXtrm server! I am a bot for reminding about the Contests and giving problems to solve!'
     )
 
