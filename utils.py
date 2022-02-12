@@ -52,7 +52,7 @@ def store_problems(x,y):
     serial_no=1
     for problem in problems:
         if "rating" in problem.keys():
-            if problem["rating"]<=RATING_UP and  problem["rating"]>=RATING_DOWN: 
+            if int(problem["rating"])<=int(RATING_UP) and  int(problem["rating"])>=int(RATING_DOWN): 
                 id=problem["contestId"]
                 name=problem["name"]
                 idx=problem["index"]
